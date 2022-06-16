@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Texturina:opsz,wght@12..72,100&display=swap");
+body {
+  font-family: "Texturina", serif;
+  color: #060d69;
+  font-size: 1.1rem;
+}
+.main-header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+.main-header img {
+  transform: scale(0.5);
+}
+.main-navbar {
+  border: 2px solid blue;
+  border-width: 3px;
+  border-radius: 6px;
+  box-shadow: rgb(23, 23, 23);
+  display: flex;
+  justify-content: center;
+}
+.main-navbar ul {
+  padding: auto;
+  gap: 30px;
+  display: flex;
+  list-style-type: none;
+}
+.main-navbar a {
+  font-weight: bold;
+  color: rgba(28, 140, 173, 0.678);
+  text-transform: uppercase;
+}
+.main-navbar a:hover {
+  color: coral;
+}
+.main-navbar a:active {
+  color: yellow;
+}
+.hero img {
+  width: 100%;
+  box-shadow: 0 0 4px rgb(23, 23, 23);
+  margin-top: 15px;
+}
+.main-content {
+  margin: 20px, 10%;
+}
+.main-text {
+  display: flex;
+  justify-content: center;
+}
+.main-text,
+.first,
+.second,
+.third {
+  padding: 30px;
+  text-align: justify;
+}
+.first {
+  color: cornflowerblue;
+  padding-left: 20px;
+  border-left: 2px dotted;
+}
+.second {
+  color: cornflowerblue;
+  border-bottom: 2px dotted;
+}
+.third {
+  color: cornflowerblue;
+  border-right: 2px dotted;
+  margin-left: 20px;
+}
+.gallery-title {
+  text-align: center;
+}
+
+.gallery {
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+
+  justify-content: center;
+  align-items: start;
+  align-content: center;
+
+  gap: 35px;
+
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.35);
+}
+
+.card img {
+  width: 150px;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: transform 0.5s;
+
+  filter: contrast(1.5) saturate(1.5);
+}
+
+.card img:hover {
+  transform: scale(1.4);
+}
+.contact-us,
+.creative {
+  margin: 60px 10%;
+}
+
+.contact-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-surname {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  border-radius: 6px;
+  resize: none;
+  box-sizing: border-box;
+  font-family: "Texturina", serif;
+}
+
+input[type="submit"] {
+  width: 250px;
+}
+input[type="submit"]:hover {
+  background-color: skyblue;
+}
+input[type="submit"]:active {
+  background-color: lightblue;
+}
+.main-footer {
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 2px solid blue;
+  border-width: 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+.main-footer p {
+  font-weight: bold;
+  text-align: center;
+}
