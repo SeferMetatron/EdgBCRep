@@ -1,30 +1,31 @@
 //Calculator
 function calculator(x, y, o) {
+  const x = Number(prompt("Enter first number"));
+  const y = Number(prompt("Enter second number"));
+  const o = prompt("Choose an operator");
   switch (o) {
     case "+":
-      return x + y;
+      ans = x + y;
       break;
     case "-":
-      return x - y;
+      ans = x - y;
       break;
     case "*":
-      return x * y;
+      ans = x * y;
       break;
     case "/":
-      return x / y;
+      ans = x / y;
     default:
       console.log("Enter a valid number");
   }
+  return "The result is:" + ans;
 }
 
-const x = Number(prompt("Enter first number"));
-const y = Number(prompt("Enter second number"));
-
-console.log(calculator(x, y, "+"));
-console.log(calculator(x, y, "-"));
-console.log(calculator(x, y, "*"));
-console.log(calculator(x, y, "/"));
-// console.log(calculator(4, 4, "*"));
+// console.log(calculator(x, y, "+"));
+// console.log(calculator(x, y, "-"));
+// console.log(calculator(x, y, "*"));
+// console.log(calculator(x, y, "/"));
+// // console.log(calculator(4, 4, "*"));
 
 //Object;
 
