@@ -153,14 +153,15 @@ const itemList = [
 // }
 // console.log(product(itemList));
 
-const array = [];
-
 function product(itemList) {
-  for (let i = 0; index <= itemList.length; i++) {
+  const array = [];
+  for (let i = 0; i < itemList.length; i++) {
     const item = {};
-    object.title = itemList[i]["title"];
-    object.price = itemList[i]["price"];
-    object.count = itemList[i]["rating"]["count"];
+
+    item.title = itemList[i]["title"];
+    item.price = itemList[i]["price"];
+    item.count = itemList[i]["rating"]["count"];
+
     array.push(item);
   }
   return array;
