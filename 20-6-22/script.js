@@ -46,7 +46,7 @@ function mult(x, y) {
 console.log("The result is:", +mult(9, 7));
 
 function div(x, y) {
-  if (y === 0) {
+  if (y == 0) {
     console.error("Only Chuck Norris can do that");
   } else if (isNaN(x) || isNaN(y)) {
     console.error("Enter two valid numbers");
