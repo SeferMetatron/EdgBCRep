@@ -151,7 +151,7 @@ const itemList = [
 //     console.log(itemList[i]["rating"]["count"]);
 //   }
 // }
-// console.log(product(itemList));
+// console.log(product(list));
 
 function product(itemList) {
   const array = [];
