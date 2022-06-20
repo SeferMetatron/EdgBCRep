@@ -11,7 +11,7 @@ console.log("The result is:", +sum1(7, 9));
 // Esercizio 2
 
 function sum2(x, y) {
-  if (isNan(x) || isNan(y)) {
+  if (isNaN(x) || isNaN(y)) {
     console.error("Enter two valid numbers");
   } else if (sum2(x)) {
     console.error("Enter two valid numbers");
@@ -24,7 +24,7 @@ console.log("The result is:", +sum2(7, 9));
 // Esercizio 3
 
 function sub(x, y) {
-  if (isNan(x) || isNan(y)) {
+  if (isNaN(x) || isNaN(y)) {
     console.error("Enter two valid numbers");
   } else if (sub(x)) {
     console.error("Enter two valid numbers");
@@ -35,7 +35,7 @@ function sub(x, y) {
 console.log("The result is:", +sub(9, 7));
 
 function mult(x, y) {
-  if (isNan(x) || isNan(y)) {
+  if (isNaN(x) || isNaN(y)) {
     console.error("Enter two valid numbers");
   } else if (mult(x)) {
     console.error("Enter two valid numbers");
@@ -48,7 +48,7 @@ console.log("The result is:", +mult(9, 7));
 function div(x, y) {
   if (y === 0) {
     console.error("Only Chuck Norris can do that");
-  } else if (isNan(x) || isNan(y)) {
+  } else if (isNaN(x) || isNaN(y)) {
     console.error("Enter two valid numbers");
   } else if (div(x)) {
     console.error("Enter two valid numbers");
