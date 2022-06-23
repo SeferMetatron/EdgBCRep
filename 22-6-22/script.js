@@ -7,24 +7,21 @@ let timer = 0;
 
 // A
 const fnLog = arrayx.forEach((element) => console.log(element));
-// const itemList = arrayx.forEach[fn1];
+// const itemList = arrayx.forEach[fnLog];
 
 // B
 
-// for (let index = 0; index < 9; index++) {
+// for (let index = 0; index < array.length; index++) {
 //   setTimeout(function () {
 //     console.log(index);
 //   }, index * 1000);
 // }
 
-// function fnTime() {
-//   let timer = 0;
-
 const fnTime = arrayx.forEach((element) => {
   setTimeout(() => {
     console.log(`At ${element - 1}s, print`, arrayx[element - 1]);
   }, timer);
-  timer = timer + 1000;
+  timer = timer + timeMS;
 });
 // Esercizio 2
 
