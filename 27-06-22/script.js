@@ -17,7 +17,7 @@ localStorage.getItem("surname");
 navEl.innerHTML = userFirst + ` ` + userSecond;
 
 try {
-  if (userFirst || userSecond != null) {
+  if (userFirst || userSecond !== null) {
   }
   throw new Error("Check the data entered");
 } catch (error) {
