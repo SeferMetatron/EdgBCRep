@@ -1,6 +1,6 @@
-* {
+/* * {
   box-sizing: content-box;
-}
+} */
 body {
   display: flex;
   flex-wrap: wrap;
@@ -44,5 +44,7 @@ img {
   flex-wrap: wrap;
   background-color: aliceblue;
   border: 2px solid red;
+  border-width: auto;
   align-content: space-between;
+  position: sticky;
 }
