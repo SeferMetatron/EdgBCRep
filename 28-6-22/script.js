@@ -27,10 +27,12 @@ nameStringF.textContent = `Hi, ${userFirst}`;
 navbar.append(nameString);
 footer.append(nameStringF);
 
+const spanProductsEl = newEl("span");
+
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((data) => {
-    const itemCount = data
+    const productListFiltered = data
       .filter((product) => product.price <= 100)
       .map((product) =>
         createCard(salesEl, product.image, product.title, product.price)
@@ -56,9 +58,10 @@ fetch("https://fakestoreapi.com/products")
       .map((product) =>
         createCard(overEl, product.image, product.title, product.price)
       );
-
-    const itemCountN = itemCount.length;
-    headerEl.textContent = `available product: ${itemCountN}`;
-    footEl.textContent = `available product: ${itemCountN}`;
+    spanProductsEl.textContent = productListFiltered.length;
+    document.body.appendChild(spanProductsEl);
+    // const itemCountN = itemCount.length;
+    // headerEl.textContent = `available product: ${itemCountN}`;
+    // footEl.textContent = `available product: ${itemCountN}`;
   })
   .then(() => (loadingEl.style.display = "none"));

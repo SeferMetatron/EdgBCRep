@@ -16,22 +16,32 @@ const deleteInputEl = q(".delete");
 //   title: "Rick e Morty",
 // };
 
-GET(BASE_URL).then((data) => {
-  data.map((series) => {
-    const imgOrPlaceholder = series.poster || "https://picsum.photos/200/300";
-    try {
-      createCard(
-        document.body,
-        imgOrPlaceholder,
-        series.title,
-        series.year,
-        series.id
-      );
-    } catch (error) {
-      console.log(error);
-    }
+GET(BASE_URL)
+  .then((data) => {
+    data.map((series) => {
+      const imgOrPlaceholder = series.poster || "https://picsum.photos/200/300";
+      try {
+        createCard(
+          document.body,
+          imgOrPlaceholder,
+          series.title,
+          series.year,
+          series.id
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  })
+  .then(() => {
+    const wrapperEls = document.querySelectorAll(".wrapper");
+    wrapperEls.forEach;
+    (wrapper) => wrapper.addEventListener;
+    "click",
+      () => {
+        DELETE(BASE_URL, wrapper.id).then(() => location.reload());
+      };
   });
-});
 addSeriesBtnEl.addEventListener("click", () => {
   const titleInputEl = q(".title").value;
   const posterInputEl = q(".poster").value;

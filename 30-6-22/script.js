@@ -32,13 +32,23 @@ GET(URL_FRIENDS).then((friendList) => {
 });
 
 // Messages
-GET(URL_MSG).then((messagesList) => {
-  messagesList
-    .reverse()
-    .map(({ text, sender, date }) =>
-      createMessageEl(messagesListEl, text, sender, date)
-    );
-});
+GET(URL_MSG)
+  .then((messagesList) => {
+    messagesList
+      .reverse()
+      .map(({ text, sender, date }) =>
+        createMessageEl(messagesListEl, text, sender, date)
+      );
+  })
+  .then(() => {
+    const wrapperEls = document.querySelectorAll(".wrapper");
+    wrapperEls.forEach;
+    (wrapper) => wrapper.addEventListener;
+    "click",
+      () => {
+        DELETE(BASE_URL, wrapper.id).then(() => location.reload());
+      };
+  });
 
 inputTextEl.addEventListener(
   "input",
