@@ -1,0 +1,6 @@
+h1 {
+  color: aqua;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
