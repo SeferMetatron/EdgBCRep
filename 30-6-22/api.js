@@ -22,6 +22,5 @@ const DELETE = async (URL_MSG, id) => {
   });
 };
 
-// const DELETE_CLICK =
 
 export { GET, POST, DELETE };
