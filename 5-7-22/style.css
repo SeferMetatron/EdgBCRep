@@ -1,0 +1,8 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  display: grid;
+  grid-template-columns: repeat();
+}
