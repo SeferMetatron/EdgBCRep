@@ -9,6 +9,7 @@
         name: `Golden Legendary - ${_}`,
         price: 40 + index,
         image: "https://picsum.photos/200/300",
+        stock: 1+index
       };
     }
   );

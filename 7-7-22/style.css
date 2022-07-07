@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100vh;
+}
+
+.task {
+  background-color: rgba(255, 255, 255, 0.785);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.134);
+}
+
+.input-text {
+  padding: 5px;
+  border-radius: 0;
+  border: none;
+  background: rgb(217, 217, 217);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.text-articles {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.task-list li input[type="checkbox"]:checked {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.task-list li input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  background-color: rgb(230, 21, 38);
+  color: white;
+  padding: 2px;
+}
