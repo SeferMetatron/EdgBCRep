@@ -5,39 +5,39 @@ let h = d.getHours();
 let m = d.getMinutes();
 let time = h + ":" + m;
 
-const getProductHTML = (product) => {
+const getProductHTML = (task) => {
   return `
     <li >
-        <div class="element">
+        <div>
             <input type="checkbox">
-            <span class="text-articles">${product}</span>
+            <span class="text-articles">${task}</span>
         </div>
         <p>${time}</p>
-        <div id="${shopList.products.indexOf(product)}" class="delete">x</div>
+        <div id="${taskList.tasks.indexOf(task)}" class="delete">X</div>
     </li>`;
 };
 
-const shopList = {
+const taskList = {
   _taskList: [],
 
-  get products() {
+  get tasks() {
     return this._taskList;
   },
 
-  set products(products) {
-    this._taskList.push(products);
+  set tasks(tasks) {
+    this._taskList.push(tasks);
     this.renderHTML();
   },
 
-  set removeProduct(id) {
+  set removeTask(id) {
     this._taskList.splice(this._taskList.indexOf(id), 1);
     this.renderHTML();
   },
 
   renderHTML() {
     const $taskList = document.querySelector(".task-list");
-    const prodotti = this.products.map(getProductHTML).join("");
-    $taskList.innerHTML = `${prodotti}`;
+    const quests = this.tasks.map(getProductHTML).join("");
+    $taskList.innerHTML = `${quests}`;
   },
 };
 
@@ -45,12 +45,12 @@ const $inputText = document.querySelector(".forminput");
 
 $inputText.addEventListener("submit", (event) => {
   const $input = document.querySelector("input");
-  shopList.products = $input.value;
+  taskList.tasks = $input.value;
 
   event.preventDefault();
   $input.value = "";
   if (event.target.tagName === "BUTTON") {
-    shopList.removeProduct = Number(event.target.id);
+    taskList.removeTask = Number(event.target.id);
   }
 });
 
@@ -58,6 +58,5 @@ const $deleteBtn = document.querySelector(".task-list");
 
 $deleteBtn.addEventListener("click", (event) => {
   if (event.target.className === "delete")
-    shopList.removeProduct = Number(event.target.id);
-  console.log(shopList.products);
+    taskList.removeTask = Number(event.target.id);
 });
