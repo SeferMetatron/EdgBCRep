@@ -60,3 +60,5 @@ $deleteBtn.addEventListener("click", (event) => {
   if (event.target.className === "delete")
     taskList.removeTask = Number(event.target.id);
 });
+// const task = localStorage.getItem(task);
+// localStorage.setItem(taskList, task);
