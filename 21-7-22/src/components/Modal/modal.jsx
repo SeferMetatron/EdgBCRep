@@ -1,16 +1,14 @@
 import "./modal.css";
 
-const Modal = ({ url, display, onClick }) => {
-  console.log(url);
+const Modal = ({ source, visibility, closeModal }) => {
   return (
     <>
-      {display && (
-        <div onClick={onClick} className="modal">
-          <img src={url} alt="Ok" />
+      {visibility ? (
+        <div className="Modal" onClick={closeModal}>
+          <img src={source} alt="ok" />
         </div>
-      )}
+      ) : null}
     </>
   );
 };
-
 export default Modal;
