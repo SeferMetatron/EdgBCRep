@@ -31,7 +31,7 @@
   cursor: pointer;
   transition: transform 0.35s;
   border: 2px solid black;
-  margin-right: 10px;
+  margin-right: 15px;
   filter: contrast(1.5) saturate(1.5);
 }
 
