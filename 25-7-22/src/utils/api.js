@@ -18,7 +18,7 @@ const GET = async (path) => {
 };
 
 const DELETE = async (path, id) => {
-  return await fetch(`${path}/${id}`, {
+  return await fetch(BASE_URL + path + id, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
   });

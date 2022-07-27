@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import MessageCard from "../MessageCard";
 import "./index.css";
-import { GET } from "../../utils/api";
+import { GET, DELETE } from "../../utils/api";
 
-const BASE_URL = "https://edgemony-backend.herokuapp.com/messages";
 const MessageCardList = () => {
   const [messageList, setMessageList] = useState([]);
 
@@ -11,12 +10,24 @@ const MessageCardList = () => {
     GET("messages").then((data) => setMessageList(data));
   }, []);
 
+  const dateOrder = (x, y) => (x.date < y.date ? 1 : -1);
+
   return (
     <div className="MessageCardList">
       {messageList.length ? (
-        messageList.map((message) => (
-          <MessageCard textContent={message} key={message.id} />
-        ))
+        messageList
+          .sort((x, y) => dateOrder(x, y))
+          .map((message) => (
+            <MessageCard
+              DeleteMessageCard={() => {
+                DELETE("messages/", message.id).then(() =>
+                  window.location.reload()
+                );
+              }}
+              textContent={message}
+              key={message.id}
+            />
+          ))
       ) : (
         <p>Loading...</p>
       )}
