@@ -2,7 +2,9 @@ import { useState } from "react";
 import AddMessage from "./components/AddMessage";
 import FriendCardList from "./components/FriendCardList";
 import MessageCardList from "./components/MessageCardList";
+import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
+import AddFriend from "./components/AddFriend";
 
 function App() {
   const [isRenderedList, setRenderedList] = useState(false);
@@ -10,6 +12,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
+      <AddFriend />
       <div className="App__friends">
         <h3>Lista degli amici</h3>
         <FriendCardList
