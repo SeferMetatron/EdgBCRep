@@ -1,26 +1,31 @@
-import "./index.css";
 import Button from "../Button";
+import "./index.css";
 
-const Modal = (modalText, setVisible, setCondition, deleteFn) => {
+const Modal = ({ modalTextContent, onModalConfirm, setModalVisibility }) => {
+  const onConfirmBtn = () => {
+    onModalConfirm();
+    setModalVisibility(false);
+  };
+
+  const onCancelBtn = () => {
+    setModalVisibility(false);
+  };
+
   return (
     <div className="Modal">
-      <div className="Modal-content">
-        <h2>{modalText}</h2>
+      <p>{modalTextContent}</p>
+      <div className="Modal__btns">
         <Button
-          onClick={() => {
-            setCondition(false);
-            setVisible(false);
-          }}
-          color="red"
-          textContent="Cancel"
+          onHandleClick={onCancelBtn}
+          textContent="Annulla"
+          color="lightcoral"
+          type="button"
         />
         <Button
-          onClick={() => {
-            setCondition(true);
-            deleteFn();
-          }}
-          color="green"
-          textContent="Yes"
+          onHandleClick={onConfirmBtn}
+          textContent="Conferma"
+          color="lightseagreen"
+          type="button"
         />
       </div>
     </div>

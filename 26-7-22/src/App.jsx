@@ -17,8 +17,10 @@ function App() {
       <div className="App__friends">
         <h3>Lista degli amici</h3>
         <FriendCardList
+          isRenderedList={isRenderedList}
           filterMsgFriends={setSearchValue}
           searchValue={searchValue}
+          setRenderedList={setRenderedList}
         />
       </div>
       <div className="App_messages">
