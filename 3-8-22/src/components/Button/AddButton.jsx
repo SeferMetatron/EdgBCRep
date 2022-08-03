@@ -1,6 +1,6 @@
 import "./index.css";
 
-const AddButton = ({ onClick, children, disabled }) => {
+const AddButton = ({ onClick, children }) => {
   return (
     <button onClick={onClick} className="add-btn">
       {children}

@@ -1,6 +1,6 @@
 import "./index.css";
 
-const Input = ({ onChange, pippo }) => {
+const Input = ({ onChange, children }) => {
   const handleChange = (e) => {
     onChange(e);
   };
@@ -13,7 +13,7 @@ const Input = ({ onChange, pippo }) => {
         onChange={handleChange}
         type="text"
       />
-      {pippo}
+      {children}
     </div>
   );
 };
