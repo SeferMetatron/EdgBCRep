@@ -1,0 +1,8 @@
+.TopRatedList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}

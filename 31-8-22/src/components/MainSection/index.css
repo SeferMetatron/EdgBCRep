@@ -1,0 +1,22 @@
+.MainSection {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: rgb(26, 0, 45);
+  align-items: center;
+  gap: 20px;
+}
+
+.MainSection-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 83.81%;
+  width: 60%;
+  color: gold;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.MainSection h2 {
+  color: gold;
+}
