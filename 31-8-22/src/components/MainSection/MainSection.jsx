@@ -7,13 +7,17 @@ import "./index.css";
 
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({});
+  const [topFiltered, setTopFiltered] = useState({});
 
   useEffect(() => {
     GET("movie", "popular", "&language=en-US&page=1").then((data) =>
       setMovieLists((prev) => ({ ...prev, popular: data.results }))
     );
 
-    GET("movie", "top_rated", "&language=en-US&page=1").then((data) =>
+    GET("movie", "top_rated", "&language=en-US&page=1");
+    setTopFiltered(
+      movieLists.topRated.filter((movie) => movie.vote_average >= 8.6)
+    ).then((data) =>
       setMovieLists((prev) => ({ ...prev, topRated: data.results }))
     );
 
@@ -30,7 +34,7 @@ const MainSection = () => {
       </div>
       <div className="MainSection-body">
         <h3>Top Rated</h3>
-        {movieLists.topRated && <TopRatedList data={movieLists.topRated} />}
+        {movieLists.topRated && <TopRatedList data={topFiltered} />}
         <h3>Upcoming</h3>
         {movieLists.upcoming && <UpcomingList data={movieLists.upcoming} />}
       </div>

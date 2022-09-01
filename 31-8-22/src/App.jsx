@@ -4,6 +4,7 @@ import MainInput from "./components/MainInput";
 import { GET } from "./utils/api";
 import "./App.css";
 import MainSection from "./components/MainSection/MainSection";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <MainInput
         inputValue={inputValue}
         movieData={movieData}

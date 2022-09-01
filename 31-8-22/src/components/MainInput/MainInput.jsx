@@ -3,11 +3,26 @@ import "./index.css";
 
 const MainInput = ({ onHandleSubmit }) => {
   const inputRef = useRef(null);
+  const mainInput = useRef(null);
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 900) {
+        mainInput.current.style.display = "flex";
+      } else {
+        mainInput.current.style.display = "none";
+      }
+    });
+  }, []);
+
+  //   useEffect(() => {
+  //     setFilteredTopRated(movieLists.topRated.filter(movie => movie.vote_average >= 8.6))
+  // }, [movieLists.topRated]);
 
   return (
     <form className={`MainInput ${isActive && "active"}`}>
