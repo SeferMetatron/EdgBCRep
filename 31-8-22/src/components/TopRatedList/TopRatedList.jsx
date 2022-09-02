@@ -1,4 +1,5 @@
 import MainCard from "../MainCard";
+import { memo } from "react";
 import "./index.css";
 
 const TopRatedList = ({ data }) => {
@@ -11,4 +12,4 @@ const TopRatedList = ({ data }) => {
   );
 };
 
-export default TopRatedList;
+export default memo(TopRatedList);

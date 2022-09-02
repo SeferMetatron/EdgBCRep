@@ -1,4 +1,3 @@
-import MainCard from "../MainCard";
 import "./index.css";
 
 const MainModal = ({ modalData, setVisibility }) => {
@@ -8,7 +7,6 @@ const MainModal = ({ modalData, setVisibility }) => {
   };
   return (
     <div className="modal">
-      <MainCard data={modalData} />
       <div className="modal-text">
         <h3>{title}</h3>
         <p>{overview}</p>

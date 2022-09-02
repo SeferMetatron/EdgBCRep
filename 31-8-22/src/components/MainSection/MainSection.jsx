@@ -14,18 +14,22 @@ const MainSection = () => {
       setMovieLists((prev) => ({ ...prev, popular: data.results }))
     );
 
-    GET("movie", "top_rated", "&language=en-US&page=1");
-    setTopFiltered(
-      movieLists.topRated.filter((movie) => movie.vote_average >= 8.6)
-    ).then((data) =>
-      setMovieLists((prev) => ({ ...prev, topRated: data.results }))
-    );
+    GET("movie", "top_rated", "&language=en-US&page=1")
+      .then((data) =>
+        setMovieLists((prev) => ({ ...prev, topRated: data.results }))
+      )
+      .then((movieLists) =>
+        setTopFiltered(movieLists.filter(movie.vote_average >= 8.6))
+      );
 
     GET("movie", "upcoming", "&language=en-US&page=1").then((data) =>
       setMovieLists((prev) => ({ ...prev, upcoming: data.results }))
     );
   }, []);
 
+  //   useEffect(() => {
+  //     set(movieLists.topRated.filter(movie => movie.vote_average >= 8.6))
+  // }, [movieLists.topRated]);
   return (
     <div className="MainSection">
       <div>

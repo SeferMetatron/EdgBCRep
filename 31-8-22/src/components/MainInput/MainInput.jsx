@@ -20,10 +20,6 @@ const MainInput = ({ onHandleSubmit }) => {
     });
   }, []);
 
-  //   useEffect(() => {
-  //     setFilteredTopRated(movieLists.topRated.filter(movie => movie.vote_average >= 8.6))
-  // }, [movieLists.topRated]);
-
   return (
     <form className={`MainInput ${isActive && "active"}`}>
       <input

@@ -1,4 +1,5 @@
 import "./index.css";
+import { memo } from "react";
 
 const Navbar = () => {
   return (
@@ -13,4 +14,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

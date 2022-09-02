@@ -1,4 +1,5 @@
 import MainCard from "../MainCard";
+import { memo } from "react";
 import "./index.css";
 
 const UpcomingList = ({ data }) => {
@@ -11,4 +12,4 @@ const UpcomingList = ({ data }) => {
   );
 };
 
-export default UpcomingList;
+export default memo(UpcomingList);

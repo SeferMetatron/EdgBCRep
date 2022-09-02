@@ -1,4 +1,5 @@
 import "./index.css";
+import { memo } from "react";
 
 const MovieEntity = ({ movieData }) => {
   const { poster_path, original_title, genres, vote_average, tagline, title } =
@@ -34,4 +35,4 @@ const MovieEntity = ({ movieData }) => {
   );
 };
 
-export default MovieEntity;
+export default memo(MovieEntity);
