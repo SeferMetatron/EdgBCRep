@@ -3,7 +3,7 @@ import MainCard from "../MainCard";
 import TopRatedList from "../TopRatedList";
 import UpcomingList from "../UpcomingList/UpcomingList";
 import { GET } from "../../utils/api";
-import "./index.css";
+import "./index.scss";
 
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({});
@@ -19,7 +19,7 @@ const MainSection = () => {
         setMovieLists((prev) => ({ ...prev, topRated: data.results }))
       )
       .then((movieLists) =>
-        setTopFiltered(movieLists.filter(movie.vote_average >= 8.6))
+        setTopFiltered(movieLists.filter((movie) => movie.vote_average >= 8.6))
       );
 
     GET("movie", "upcoming", "&language=en-US&page=1").then((data) =>

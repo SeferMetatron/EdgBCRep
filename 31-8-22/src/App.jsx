@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import MovieEntity from "./components/MovieEntity";
 import MainInput from "./components/MainInput";
 import { GET } from "./utils/api";
-import "./App.css";
+import "./App.scss";
 import MainSection from "./components/MainSection/MainSection";
 import Navbar from "./components/Navbar/Navbar";
 

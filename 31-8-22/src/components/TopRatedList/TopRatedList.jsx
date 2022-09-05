@@ -1,6 +1,6 @@
 import MainCard from "../MainCard";
 import { memo } from "react";
-import "./index.css";
+import "./index.scss";
 
 const TopRatedList = ({ data }) => {
   return (

@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.MainSection {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: $bg-color;
+  align-items: center;
+  gap: 20px;
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: 83.81%;
+    width: 60%;
+    color: $main-text-color;
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    color: $main-text-color;
+  }
+}
+
+// .MainSection-body {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 12px;
+//   height: 83.81%;
+//   width: 60%;
+//   color: $main-text-color;
+//   padding: 20px 0;
+//   box-sizing: border-box;
+// }
+// .MainSection h2 {
+//   color: gold;
+// }

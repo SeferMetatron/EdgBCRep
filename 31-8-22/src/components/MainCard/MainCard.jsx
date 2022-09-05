@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 import { useState, memo } from "react";
 import MainModal from "../MainModal/MainModal";
 

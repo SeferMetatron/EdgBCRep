@@ -1,4 +1,4 @@
-import "./index.css";
+import "./index.scss";
 
 const MainModal = ({ modalData, setVisibility }) => {
   const { title, overview, release_date } = modalData;
