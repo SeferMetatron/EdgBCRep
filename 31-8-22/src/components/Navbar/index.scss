@@ -2,8 +2,7 @@
 @import "../../styles/mixins";
 
 .Navbar {
-  display: flex;
-  align-items: center;
+  @include flex-element(row, flex-start);
   height: 70px;
   background-color: $bg-color;
   border-bottom: 1px solid $border-color;
@@ -16,9 +15,8 @@
 
     li {
       a {
+        @include text(medium, 800);
         color: $main-text-color;
-        font-weight: 800;
-        text-decoration: none;
       }
     }
   }

@@ -2,9 +2,7 @@
 @import "../../styles/mixins";
 
 .TopRatedList {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  @include flex-element(row, flex-start, center, wrap, 10px);
   flex-grow: 1;
   overflow-y: hidden;
   overflow-x: scroll;

@@ -2,45 +2,39 @@
 @import "../../styles/mixins";
 
 .MainInput {
+  @include flex-element();
+  @include element-position(absolute, 40px, 0, calc(50% - 37px));
+  @include border(0, 8px);
   height: 40px;
-  display: flex;
-  border-radius: 8px;
-  position: absolute;
-  top: 40px;
-  left: calc(50% - 37px);
   transition: all 0.35s;
 
   input {
+    @include box-model(0, 12px, 0);
+    @include border(0, 8px);
     box-shadow: 0 0 8px $shadow;
-    padding: 12px;
-    border: 0;
     outline: none;
     font-weight: bold;
-    border-radius: 8px;
     width: 0;
     opacity: 0;
     transition: all 1s;
   }
 
   button {
+    @include dimensions(54px, 100%);
+    @include text(medium, bold);
+    @include border(0, 30%);
     box-shadow: 0 0 8px $shadow;
-    border: 0;
-    width: 54px;
-    height: 100%;
-    font-weight: bold;
     background-color: $main-text-color;
     border-left: 1px solid $border-color;
     cursor: pointer;
-    border-radius: 30%;
   }
 
   &active {
     left: calc(50% - 170px);
   }
   input {
+    @include dimensions(240px, auto);
     opacity: 1;
-    width: 240px;
-    height: auto;
   }
 }
 

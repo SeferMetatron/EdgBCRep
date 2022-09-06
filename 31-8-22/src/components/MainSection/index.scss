@@ -2,22 +2,15 @@
 @import "../../styles/mixins";
 
 .MainSection {
+  @include flex-element(row, center, center, flex-start, nowrap, 20px);
   height: 100vh;
-  display: flex;
-  justify-content: center;
   background: $bg-color;
-  align-items: center;
-  gap: 20px;
 
   &-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    height: 83.81%;
-    width: 60%;
+    @include flex-element(column, flex-start, flex-start, nowrap, 12px);
+    @include dimensions(60%, 83, 81%);
+    @include box-model(0, 20px 0);
     color: $main-text-color;
-    padding: 20px 0;
-    box-sizing: border-box;
   }
 
   h2 {
