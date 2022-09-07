@@ -1,9 +1,9 @@
-import "./index.scss";
+import styles from "./index.scss";
 import { memo } from "react";
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className={styles.navbar}>
       <ul>
         <li>
           <a href="#movie-entity">Random</a>

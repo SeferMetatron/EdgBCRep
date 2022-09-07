@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const MainInput = ({ onHandleSubmit }) => {
   const inputRef = useRef(null);

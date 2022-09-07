@@ -1,12 +1,12 @@
 import MainCard from "../MainCard";
 import { memo } from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const TopRatedList = ({ data }) => {
   return (
-    <div className="TopRatedList">
+    <div className={styles.TopRatedList}>
       {data.map((item, index) => (
-        <MainCard data={item} className="top-rated" key={index} />
+        <MainCard data={item} className={styles.__toprated} key={index} />
       ))}
     </div>
   );

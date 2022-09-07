@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.scss";
 
 const MainModal = ({ modalData, setVisibility }) => {
   const { title, overview, release_date } = modalData;
@@ -6,8 +6,8 @@ const MainModal = ({ modalData, setVisibility }) => {
     setVisibility(false);
   };
   return (
-    <div className="modal">
-      <div className="modal-text">
+    <div className={styles.modal}>
+      <div className={styles.text}>
         <h3>{title}</h3>
         <p>{overview}</p>
         <p>{release_date}</p>

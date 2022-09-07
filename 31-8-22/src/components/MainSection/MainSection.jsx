@@ -3,7 +3,7 @@ import MainCard from "../MainCard";
 import TopRatedList from "../TopRatedList";
 import UpcomingList from "../UpcomingList/UpcomingList";
 import { GET } from "../../utils/api";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({});
@@ -31,12 +31,12 @@ const MainSection = () => {
   //     set(movieLists.topRated.filter(movie => movie.vote_average >= 8.6))
   // }, [movieLists.topRated]);
   return (
-    <div className="MainSection">
+    <div className={styles.MainSection}>
       <div>
         <h2>Most Popular</h2>
         {movieLists.popular && <MainCard data={movieLists.popular[0]} />}
       </div>
-      <div className="MainSection-body">
+      <div className={styles.body}>
         <h3>Top Rated</h3>
         {movieLists.topRated && <TopRatedList data={topFiltered} />}
         <h3>Upcoming</h3>

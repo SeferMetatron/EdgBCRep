@@ -7,18 +7,18 @@
   color: $titles-color;
   text-transform: uppercase;
 
-  &__info {
+  &info {
     @include flex-element(column, space-between, flex-end);
     width: 22%;
     padding: 20px;
 
-    &--title {
+    &title {
       transform: translate(100px, 120px) h1 {
         font-size: 4rem;
       }
     }
 
-    &--bottom {
+    &bottom {
       @include text(0.9rem, bold);
       position: relative;
       width: 100%;
@@ -34,7 +34,7 @@
         list-style-type: none;
       }
 
-      &--tagline {
+      &tagline {
         @include element-position(absolute, 0, -30px);
         @include text(1.5rem, bold);
         writing-mode: vertical-rl;
@@ -43,15 +43,15 @@
       }
     }
   }
-  &__poster {
+  &poster {
     @include dimensions(56%, 100vh);
     object-fit: cover;
   }
 
-  &__book {
+  &book {
     @include flex-element(column-reverse);
     width: 22%;
-    &--btn {
+    &btn {
       @include text(medium, bold, uppercase);
       width: 200px;
       padding: 20px 30px;

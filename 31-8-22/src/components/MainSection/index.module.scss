@@ -6,7 +6,7 @@
   height: 100vh;
   background: $bg-color;
 
-  &-body {
+  &body {
     @include flex-element(column, flex-start, flex-start, nowrap, 12px);
     @include dimensions(60%, 83, 81%);
     @include box-model(0, 20px 0);

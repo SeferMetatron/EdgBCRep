@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.Navbar {
+.navbar {
   @include flex-element(row, flex-start);
   height: 70px;
   background-color: $bg-color;
