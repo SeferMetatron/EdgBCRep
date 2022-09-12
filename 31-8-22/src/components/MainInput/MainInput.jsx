@@ -21,7 +21,7 @@ const MainInput = ({ onHandleSubmit }) => {
   }, []);
 
   return (
-    <form className={`MainInput ${isActive && "active"}`}>
+    <form className={styles.MainInput }>
       <input
         ref={inputRef}
         onChange={onHandleSubmit}

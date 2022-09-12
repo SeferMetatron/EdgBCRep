@@ -36,6 +36,9 @@
     @include dimensions(240px, auto);
     opacity: 1;
   }
+  // &:global(.active){
+  //   color: $bg-color;
+  // }
 }
 
 // .MainInput input {
