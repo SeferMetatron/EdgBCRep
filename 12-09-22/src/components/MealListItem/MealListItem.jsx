@@ -8,7 +8,7 @@ const MealListItem = (props) => {
     <div className={styles.MealListItem}>
       <li className={styles.ListedItem}>
         <img
-          className={styles.ItemThumb}
+          className={styles.thumbnail}
           src={meal.strMealThumb}
           alt={`Preview of ${meal.strCategory} recipe`}
         />
@@ -16,9 +16,9 @@ const MealListItem = (props) => {
           <h3 className={styles.title}>{meal.strMeal}</h3>
         </div>
         <Link
-          to={`/Category/${categoryName}/${meal.strMeal}`}
+          to={`/Category/${categoryName}/${meal.strMeal}/${meal.idMeal}`}
           title={`Browse Catalogue ${meal.strMeal}`}
-          className={styles.Link}
+          className={styles.link}
         >
           {meal.strMeal}
         </Link>

@@ -12,13 +12,14 @@ const CategoryListItem = (props) => {
           src={category.strCategoryThumb}
           alt={`Preview of ${category.strCategory} category`}
         />
-        <div className={styles.Content}>
+        <div className={styles.content}>
           <h3 className={styles.title}> {category.strCategory}</h3>
+          {/* <p className={styles.description}>{category.description}</p> */}
         </div>
         <Link
           to={`/Category/${category.strCategory}`}
           title={`Browse Catalogue ${category.strCategory}`}
-          className={styles.Link}
+          className={styles.link}
         >
           {" "}
           {category.strCategory}

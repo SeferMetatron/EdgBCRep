@@ -9,4 +9,7 @@ export const ENDPOINTS = {
   get CATEGORIES() {
     return `${this.BASE_URL}/categories.php`;
   },
+  get DETAIL() {
+    return `${this.BASE_URL}/lookup.php`;
+  },
 };

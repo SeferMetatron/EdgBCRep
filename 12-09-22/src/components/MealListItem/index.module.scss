@@ -1,4 +1,4 @@
-.CategoryListItem {
+.MealListItem {
   position: relative;
   display: flex;
   align-items: center;
@@ -11,9 +11,8 @@
   }
 
   .thumbnail {
-    aspect-ratio: 1/1;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 
     &-wrapper {
