@@ -1,10 +1,10 @@
 import styles from "./index.module.scss";
 import { useOutletContext } from "react-router-dom";
 
-const YtPlayer = (props) => {
-  const data = useOutletContext();
-  const youtubeUrl = data?.video;
-  const YTID = youtubeUrl?.split("?v=")[1];
+export const YtPlayer = (props) => {
+  const recipe = useOutletContext();
+  const { strYoutube } = recipe;
+  const link = strYoutube?.replace?.(`/watch?v=`, `/embed/` ?? ``);
 
   return (
     <div className={styles.YtPlayer}>
@@ -12,8 +12,8 @@ const YtPlayer = (props) => {
       <iframe
         width="600"
         height="400"
-        src={`https://www.youtube.com/embed/${YTID}`}
-        frameborder="0"
+        src={`${link}?ecver=1&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560`}
+        frameBorder="0"
         allow="autoplay; encrypted media"
         allowFullScreen
       ></iframe>

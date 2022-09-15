@@ -1,11 +1,8 @@
 import styles from "./index.module.scss";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const links = [
-    { href: "/", label: "Home", title: "Return Home" },
-    // { href: "/category", label: "Categories", title: "Browse Categories" },
-  ];
+  const links = [{ href: "/", label: "Home", title: "Return Home" }];
 
   return (
     <nav className={styles.Navbar}>
@@ -14,12 +11,16 @@ const Navbar = () => {
         {links.map(({ href, label, title }) => (
           <li key={href}>
             <NavLink
+              end
               to={href}
               title={title ? title : label}
-              style={({ isActive }) => ({
-                pointerEvents: isActive ? "none" : "auto",
-                opacity: isActive ? 0.4 : 1,
-              })}
+              style={({ isActive, isPending }) => {
+                return {
+                  color: isPending ? "red" : "currentColor",
+                  pointerEvents: isActive || isPending ? "none" : "auto",
+                  opacity: isActive ? 0.4 : 1,
+                };
+              }}
               className={({ isActive }) =>
                 isActive ? "nav nav--active" : "nav"
               }

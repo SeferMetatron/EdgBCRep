@@ -1,83 +1,54 @@
-import { useParams, Outlet, NavLink } from "react-router-dom";
-import { ENDPOINTS } from "../../utils/endpoints";
-import { useFetch } from "../../utils/custom-fetch";
+import {
+  useParams,
+  useLoaderData,
+  Link,
+  Outlet,
+  NavLink,
+} from "react-router-dom";
+// import { ENDPOINTS } from "../../utils/endpoints";
+// import { useFetch } from "../../utils/custom-fetch";
 
-const formatRecipe = () => {
-  const iniReci = data.meals?.at[0] ?? {};
-  const ingredients = [];
-  for (let i = 1; 1 <= 20; i++) {
-    const name = iniReci[`strIngredient${i}`];
-    const value = iniReci[`strMeasures${i}`];
-
-    if (!name?.length) {
-      continue;
-    }
-    ingredients.push({ name, value });
-  }
-
-  return {
-    name: iniReci.strMeal,
-    id: iniReci.idMeal,
-    youTubeUrl: iniReci.strYoutube,
-    thumbnailSrc: iniReci.strMealThumb,
-    tags: iniReci.strTags,
-    instructions: iniReci.strInstructions,
-    ingredients,
-  };
-};
-
-export const Recipe = () => {
-  const tab = [
-    {
-      name: "Ingredient",
-      path: "/ingredients",
-    },
-    {
-      name: "Instructions",
-      path: "/instructions",
-    },
-    {
-      name: "Video",
-      path: "/video",
-    },
-  ];
+export const Recipe = (props) => {
   const { categoryName, recipeName, id } = useParams();
-  const { data, loading, error } = useFetch(
-    `${ENDPOINTS.DETAIL}?i=${id}`,
-    formatRecipe
-  );
+  // const { data, loading, error } = useFetch(`${ENDPOINTS.DETAIL}i?=${id}`);
+  const data = useLoaderData();
+  const recipe = data?.meals?.at(0) ?? null;
+  const tabs = [
+    { label: "Recipe", path: "./instructions" },
+    { label: "Ingredients", path: "./ingredients" },
+    { label: "YouTube", path: "./youtube" },
+  ];
 
   if (!data) {
     return "Loading...";
   }
 
   return (
-    <div>
-      <h3>
-        {categoryName} {recipeName}
-      </h3>
-      <div className={styles.cardContainer}>
-        <div className={styles.container}>
-          <nav className={styles.tab}>
-            {tab.map((item, i) => (
+    <div className="Recipe">
+      <img width={100} src={recipe.strMealThumb} alt={recipeName} />
+      <div className="Text">
+        <h3>
+          <Link to={`/category/${categoryName}`} />
+          {categoryName}
+        </h3>
+        <h2>{recipeName}</h2>
+      </div>
+      <div className="tabs">
+        <ul className="nav nav-tabs">
+          {tabs.map(({ label, path }) => (
+            <li className="nav-item" key={path}>
               <NavLink
                 className={({ isActive }) =>
-                  isActive
-                    ? `${styles.link} ${styles.link_active}`
-                    : styles.link
+                  `nav-link ${isActive ? "active" : "not-active"}`
                 }
-                to={`.${item.path}`}
-                key={i}
+                to={path}
               >
-                {item.name}
+                {label}
               </NavLink>
-            ))}
-          </nav>
-          <Outlet context={data} />
-
-          {/* {tab === 'youtube' && <p>{data.youtubeUrl}</p>}
-      {tab === 'instructions' && <p>{data.instructions}</p>} */}
-        </div>
+            </li>
+          ))}
+        </ul>
+        <Outlet context={recipe} />
       </div>
     </div>
   );

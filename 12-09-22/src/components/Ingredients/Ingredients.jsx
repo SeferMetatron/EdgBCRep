@@ -1,17 +1,27 @@
 import styles from "./index.module.scss";
-import { Link, useOutletContext } from "react-router-dom";
+import { Fragment } from "react";
+import { useOutletContext, useLoaderData } from "react-router-dom";
 
-const Ingredients = () => {
-  const data = useOutletContext();
+export const Ingredients = () => {
+  const recipe = useOutletContext() ?? {};
+  const indexes = Array.from({ length: 20 }, (_, i) => i + 1);
+  // const data = useLoaderData();
+
   return (
     <div className={styles.ingredients}>
+      {" "}
       <ul>
-        {data?.ingredients?.map((item, index) => (
-          <li key={index}>
-            {" "}
-            {item.name}: {item.value}
-          </li>
-        ))}
+        {!!recipe &&
+          indexes.map((index) => (
+            <Fragment key={index}>
+              {recipe[`strIngredient${index}`]?.length ? (
+                <li>
+                  {recipe[`strIngredient${index}`]}:
+                  {recipe[`strMeasure${index}`]}
+                </li>
+              ) : null}
+            </Fragment>
+          ))}
       </ul>
     </div>
   );

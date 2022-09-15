@@ -1,22 +1,13 @@
-import { Link } from "react-router-dom";
-import { ENDPOINTS } from "../../utils/endpoints";
-import { useFetch } from "../../utils/custom-fetch";
+import { useLoaderData } from "react-router-dom";
 import CategoryList from "../../components/CategoryList/CategoryList";
 
 export const Home = () => {
-  const { data, loading, error } = useFetch(ENDPOINTS.CATEGORIES);
+  const data = useLoaderData();
 
-  if (loading) {
+  if (!data) {
     return "Loading...";
   }
   return (
-    // <div>
-    //   Home
-    //   <br />
-    //   <Link to="/Category" title="Browse Categories" aria-label="Category">
-    //     Browse Catalogue
-    //   </Link>
-    // </div>
     <div>
       <h3>Home</h3>
       {data ? (

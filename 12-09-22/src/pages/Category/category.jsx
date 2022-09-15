@@ -1,16 +1,11 @@
-import { Link, useParams } from "react-router-dom";
-import { ENDPOINTS } from "../../utils/endpoints";
-import { useFetch } from "../../utils/custom-fetch";
+import { useLoaderData, useParams } from "react-router-dom";
 import MealList from "../../components/MealList/MealList";
 
 export const Category = () => {
-  const params = useParams();
-  const { categoryName } = params;
-  const { data, loading, error } = useFetch(
-    `${ENDPOINTS.FILTER}?c=${categoryName}`
-  );
+  const { categoryName } = useParams();
+  const data = useLoaderData();
 
-  if (loading) {
+  if (!data) {
     return "Loading...";
   }
   if (!data?.meals?.length) {
