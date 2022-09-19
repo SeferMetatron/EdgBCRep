@@ -1,5 +1,5 @@
 import styles from "./index.scss";
-import { memo } from "react";
+import { memo, useContext } from "react";
 
 const Navbar = () => {
   return (

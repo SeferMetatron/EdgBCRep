@@ -1,15 +1,14 @@
 import styles from "./index.module.scss";
-import { useState, memo } from "react";
-import MainModal from "../MainModal/MainModal";
+import { memo, useContext } from "react";
 
 const MainCard = ({ data, classStyleProp = {} }) => {
   const { title, vote_average, poster_path } = data;
-  const [isVisible, setVisibility] = useState(false);
   const onClickOpen = () => setVisibility(true);
+  const modalStatus = useContext(modalVisibility);
+  const { isVisible, setVisibility } = modalStatus;
 
   return (
     <div>
-      {/* <MainModal isVisible = {isVisible}/> */}
       <div
         className={styles.MainCard}
         style={classStyleProp}
