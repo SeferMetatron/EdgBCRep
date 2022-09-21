@@ -8,6 +8,11 @@ const Footer = () => {
   return (
     <div className={styles.Footer}>
       <h3> Number of piedini: {GeneralReceivedContext.state.count}</h3>
+      <button
+        onClick={() => GeneralReceivedContext.dispatch({ type: "SET_THEME" })}
+      >
+        ✨
+      </button>
     </div>
   );
 };
