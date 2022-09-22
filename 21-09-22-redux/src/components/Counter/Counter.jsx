@@ -1,4 +1,4 @@
-import "./index.css";
+import styles from "./index.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 // import { useReducer } from "react";
 
@@ -8,7 +8,7 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="Counter">
+    <div className={styles.Counter}>
       <h3> {user.userName}</h3>
       <h4> {count.value}</h4>
       <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>;

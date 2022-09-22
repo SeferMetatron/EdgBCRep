@@ -4,6 +4,8 @@ export const initialState = {
   count: { value: 0, default: 100 },
   user: { userName: "" },
   foo: {},
+  isModalVisible: false,
+  modalData: {},
 };
 
 function countReducer(state = {}, action) {
@@ -35,10 +37,25 @@ function fooReducer(state = {}, action) {
   }
 }
 
+function modalReducer(state = {}, action) {
+  switch (action.type) {
+    case "SET_MODAL_VISIBLE":
+      return { ...state, isModalVisible: true };
+    case "SET_MODAL_INVISIBLE":
+      return { ...state, isModalVisible: false };
+    case "SET_MODAL_DATA":
+      return { ...state, modalData: action.payload };
+    default:
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
   count: countReducer,
   user: userReducer,
   foo: fooReducer,
+  isModalVisible: modalReducer,
+  modalData: modalReducer,
 });
 
 const store = createStore(rootReducer, initialState);
